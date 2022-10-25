@@ -105,7 +105,7 @@ const corsOptions = {
 
 const startServer = async () => {
   const app = express();
-  app.use(cors());
+  app.use(cors(corsOptions));
   app.use(
     "/graphql",
     graphqlHTTP({
@@ -133,7 +133,7 @@ const startServer = async () => {
 
   await server.start();
   server.applyMiddleware({ app });
-
+  console.log(process.env);
   mongoose.connect(
     `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@${process.env.MONGO_URL}/?retryWrites=true&w=majority`
   );
