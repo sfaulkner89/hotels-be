@@ -122,7 +122,7 @@ const startServer = async () => {
   server.applyMiddleware({ app });
 
   mongoose.connect(
-    "mongodb+srv://jules:mal1n@cluster0.p2x6dv7.mongodb.net/?retryWrites=true&w=majority"
+    `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@${process.env.MONGO_URL}/?retryWrites=true&w=majority`
   );
 
   await new Promise((resolve) => httpServer.listen({ port: 2000 }, resolve));
