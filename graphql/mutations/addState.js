@@ -1,6 +1,6 @@
-import { StateType } from "../schema";
+import { StateType } from "../schema/index.js";
 import { GraphQLNonNull, GraphQLString, GraphQLInt } from "graphql";
-import { State } from "../../mongoose/schema/State";
+import { State } from "../../mongoose/schema/State.js";
 
 export const addState = {
   type: StateType,

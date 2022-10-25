@@ -4,8 +4,8 @@ import {
   GraphQLNonNull,
   GraphQLString,
 } from "graphql";
-import { Hotel } from "../../mongoose/schema/Hotel";
-import { StayType } from "../schema";
+import { Hotel } from "../../mongoose/schema/Hotel.js";
+import { StayType } from "../schema/index.js";
 
 const StaySchema = {
   hotelId: { type: new GraphQLNonNull(GraphQLInt) },

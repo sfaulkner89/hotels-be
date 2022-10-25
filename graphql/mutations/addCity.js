@@ -1,6 +1,6 @@
-import { CityType } from "../schema";
+import { CityType } from "../schema/index.js";
 import { GraphQLNonNull, GraphQLString, GraphQLInt } from "graphql";
-import { City } from "../../mongoose/schema/City";
+import { City } from "../../mongoose/schema/City.js";
 
 export const addCity = {
   type: CityType,

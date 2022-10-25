@@ -1,6 +1,6 @@
-import { StayType } from "../schema";
+import { StayType } from "../schema/index.js";
 import { GraphQLNonNull, GraphQLInt } from "graphql";
-import { Hotel } from "../../mongoose/schema/Hotel";
+import { Hotel } from "../../mongoose/schema/Hotel.js";
 
 export const removeStay = {
   type: StayType,

@@ -1,4 +1,4 @@
-import { HotelType, StayType } from "../schema";
+import { HotelType, StayType } from "../schema/index.js";
 import {
   GraphQLObjectType,
   GraphQLNonNull,
@@ -8,7 +8,7 @@ import {
   GraphQLList,
 } from "graphql";
 
-import { Hotel } from "../../mongoose/schema/Hotel";
+import { Hotel } from "../../mongoose/schema/Hotel.js";
 
 export const addHotel = {
   type: HotelType,

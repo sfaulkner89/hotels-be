@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 export default async (req, res) => {
+  console.log("got it");
   const query = req.params.query;
   const lat =
     typeof parseFloat(req.params.lat) === "number" ? req.params.lat : 39.8283;

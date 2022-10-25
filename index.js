@@ -1,17 +1,18 @@
-const express = require("express");
+import express from "express";
 import cors from "cors";
-const { graphqlHTTP } = require("express-graphql");
-import router from "./router";
-const {
+import { graphqlHTTP } from "express-graphql";
+import router from "./router.js";
+import path from "path";
+import {
   GraphQLSchema,
   GraphQLObjectType,
   GraphQLInt,
   GraphQLList,
   GraphQLString,
-} = require("graphql");
-const { default: mongoose } = require("mongoose");
-const { Hotel } = require("./mongoose/schema/Hotel");
-const { State } = require("./mongoose/schema/State");
+} from "graphql";
+import mongoose from "mongoose";
+import { Hotel } from "./mongoose/schema/Hotel.js";
+import { State } from "./mongoose/schema/State.js";
 import { StateType, CityType, HotelType } from "./graphql/schema/index.js";
 import {
   addHotel,
@@ -20,13 +21,19 @@ import {
   addStay,
   removeStay,
 } from "./graphql/mutations/index.js";
-const { City } = require("./mongoose/schema/City");
+import { City } from "./mongoose/schema/City.js";
 import { ApolloServer } from "apollo-server-express";
 import http from "http";
 import {
   ApolloServerPluginDrainHttpServer,
   ApolloServerPluginLandingPageLocalDefault,
 } from "apollo-server-core";
+
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+
+const __dirname = path.dirname(__filename);
 
 const RootMutationType = new GraphQLObjectType({
   name: "Mutation",
@@ -106,6 +113,12 @@ const startServer = async () => {
       graphiql: true,
     })
   );
+
+  // app.use(express.static(path.join(__dirname, "build")));
+
+  // app.get("/*", (req, res) => {
+  //   res.sendFile(path.join(__dirname, "build", "index.html"));
+  // });
   app.use(router);
   const httpServer = http.createServer(app);
   const server = new ApolloServer({

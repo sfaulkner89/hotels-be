@@ -6,4 +6,4 @@ const router = express.Router();
 router.get("/get-location/:placeId", (req, res) => getLocation(req, res));
 router.get("/get-places/:query/:lat/:lng", (req, res) => getPlaces(req, res));
 
-module.exports = router;
+export default router;

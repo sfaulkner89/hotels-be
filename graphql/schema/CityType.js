@@ -6,11 +6,11 @@ import {
   GraphQLList,
 } from "graphql";
 
-import { StateType } from "./StateType";
+import { StateType } from "./StateType.js";
 
-import { State } from "../../mongoose/schema/State";
-import { HotelType } from "./HotelType";
-import { Hotel } from "../../mongoose/schema/Hotel";
+import { State } from "../../mongoose/schema/State.js";
+import { HotelType } from "./HotelType.js";
+import { Hotel } from "../../mongoose/schema/Hotel.js";
 
 export const CityType = new GraphQLObjectType({
   name: "City",

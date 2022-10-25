@@ -6,9 +6,10 @@
   "engines": {
     "node": "16.13.x"
   },
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon ./index.js --exec babel-node -e js"
+    "start": "node ./index.js --exec babel-node -e js"
   },
   "keywords": [],
   "author": "",
