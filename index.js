@@ -99,7 +99,7 @@ const schema = new GraphQLSchema({
 });
 
 const corsOptions = {
-  origin: "http://localhost:3000",
+  origin: "https://bethbooker.netlify.app",
   credentials: true,
 };
 
