@@ -8,7 +8,7 @@ import {
 
 export const StaySchema = {
   hotelId: { type: new GraphQLNonNull(GraphQLInt) },
-  id: { type: new GraphQLNonNull(GraphQLInt) },
+  id: { type: new GraphQLNonNull(GraphQLString) },
   date: { type: GraphQLString },
   rating: { type: GraphQLFloat },
   price: { type: GraphQLFloat },
