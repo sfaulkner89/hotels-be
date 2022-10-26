@@ -1,12 +1,12 @@
 import { StayType } from "../schema/index.js";
-import { GraphQLNonNull, GraphQLInt } from "graphql";
+import { GraphQLNonNull, GraphQLInt, GraphQLString } from "graphql";
 import { Hotel } from "../../mongoose/schema/Hotel.js";
 
 export const removeStay = {
   type: StayType,
   description: "Removing a stay from a hotel",
   args: {
-    stayId: { type: new GraphQLNonNull(GraphQLInt) },
+    stayId: { type: new GraphQLNonNull(GraphQLString) },
     hotelId: { type: new GraphQLNonNull(GraphQLInt) },
   },
   resolve: async (_parent, args) => {
