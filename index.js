@@ -138,7 +138,9 @@ const startServer = async () => {
     `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@${process.env.MONGO_URL}/?retryWrites=true&w=majority`
   );
 
-  await new Promise((resolve) => httpServer.listen({ port: 2000 }, resolve));
+  await new Promise((resolve) =>
+    httpServer.listen({ port: process.env.PORT || 2000 }, resolve)
+  );
   console.log(`get poppin' at ${server.graphqlPath}`);
 };
 
