@@ -1,3 +1,4 @@
+import { randomUUID } from "crypto";
 import {
   GraphQLFloat,
   GraphQLInt,
@@ -24,7 +25,7 @@ export const addStay = {
       (hotel) => hotel
     );
     const newStay = {
-      id: hotelUpdate.stays.length + 1,
+      id: randomUUID(),
       hotelId: args.hotelId,
       date: args.date,
       rating: args.rating,

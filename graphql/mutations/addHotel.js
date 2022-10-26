@@ -9,6 +9,7 @@ import {
 } from "graphql";
 
 import { Hotel } from "../../mongoose/schema/Hotel.js";
+import { randomUUID } from "crypto";
 
 export const addHotel = {
   type: HotelType,
@@ -38,7 +39,7 @@ export const addHotel = {
       lastStay: args.firstStay,
       stays: [
         {
-          id: 1,
+          id: randomUUID(),
           hotelId,
           date: args.firstStay,
           rating: args.rating,
