@@ -10,6 +10,7 @@ export const removeStay = {
     hotelId: { type: new GraphQLNonNull(GraphQLInt) },
   },
   resolve: async (_parent, args) => {
+    console.log(args);
     const hotelToUpdate = await Hotel.findOne({ id: args.hotelId });
     hotelToUpdate.stays = hotelToUpdate.stays.filter(
       (stay) => stay.id !== args.stayId
@@ -18,6 +19,7 @@ export const removeStay = {
       hotelToUpdate.delete();
       return hotelToUpdate;
     }
+    console.log(hotelToUpdate);
     hotelToUpdate.save();
     return hotelToUpdate;
   },
