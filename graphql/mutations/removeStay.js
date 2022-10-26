@@ -19,7 +19,6 @@ export const removeStay = {
       hotelToUpdate.delete();
       return hotelToUpdate;
     }
-    console.log(hotelToUpdate);
     hotelToUpdate.save();
     return hotelToUpdate;
   },
